@@ -1,0 +1,164 @@
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME 2021.0.0.0 (20210305 - Build 21302 - WIN64)
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME_HOME is 'C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Data Interoperability (node locked-crc)
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Permanent License.
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Machine host name is: CUTSP135
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|START - ProcessID: 21848, peak process memory usage: 72968 kB, current process memory usage: 72968 kB
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Command line arguments are `C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\fme.exe' `C:/Users/jwei/Desktop\wb-xlate-1635990571105_22524' `LOG_STANDARDOUT' `YES' `LogCountServerName' `{59c25955-a2ec-41c1-ba22-054ebaaadf00}'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Connection Storage: 'C:\Users\jwei\AppData\Roaming\Safe Software\FME\'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Shared folders for formats are : C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\datasources;C:\Users\jwei\Documents\FME\Formats
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Shared folders for transformers are : C:\Users\jwei\AppData\Roaming\Safe Software\FME\Packages\21302-win64\transformers;C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\transformers
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Shared folders for coordinate systems are : C:\Users\jwei\Documents\FME\CoordinateSystems
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Shared folders for coordinate system exceptions are : C:\Users\jwei\Documents\FME\CoordinateSystemExceptions
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Shared folders for coordinate system grid overrides are : C:\Users\jwei\Documents\FME\CoordinateSystemGridOverrides
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Shared folders for CS-MAP transformation exceptions are : C:\Users\jwei\Documents\FME\CsmapTransformationExceptions
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Shared folders for transformer categories are : C:\Users\jwei\Documents\FME\TransformerCategories
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Mapping File Identifier is: JSON to NONE
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Reader Keyword is `MULTI_READER'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Writer Keyword is `MULTI_WRITER'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Writer Group Definition Keyword is `MULTI_WRITER_DEF'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Reader type is `MULTI_READER'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Writer type is `MULTI_WRITER'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Current working folder is `C:\Users\jwei\Desktop'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Temporary folder is `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wbrun_1635988667590_22524\fmetmp_4', set from environment variable `FME_TEMP'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Cache folder is 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: FME_HOME is `C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: FME_BASE is 'yes'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: FME_MF_DIR is 'C:\Users\jwei\Desktop/'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: FME_MF_NAME is 'BBTJson.fmw'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: FME_PRODUCT_NAME is 'FME(R) 2021.0.0.0'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|System Status: 119.81 GB of disk space available in the FME temporary folder (C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wbrun_1635988667590_22524\fmetmp_4)
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|System Status: 31.71 GB of physical memory available
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|System Status: 126.84 GB of virtual memory available
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Operating System: Microsoft Windows 10 64-bit  (Build 19043)
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Platform: WIN64
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Locale: en_US
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|System Encoding: windows-1252
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Start freeing memory when the process exceeds 95.13 GB
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME Configuration: Stop freeing memory when the process is below 71.35 GB
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Creating writer for format: 
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Creating reader for format: 
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|MULTI_READER(MULTI_READER): Will fail with first member reader failure
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Using Multi Reader with keyword `MULTI_READER' to read multiple datasets
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Using MultiWriter with keyword `MULTI_WRITER' to output data (ID_ATTRIBUTE is `multi_writer_id')
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Writer output will be ordered by value of multi_writer_id
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Loaded module 'LogCount_func' from file 'C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\plugins/LogCount_func.dll'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME API version of module 'LogCount_func' matches current internal version (3.8 20210203)
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|Loaded module 'Geometry_func' from file 'C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\plugins/Geometry_func.dll'
+2021-11-03 21:49:34|   0.0|  0.0|INFORM|FME API version of module 'Geometry_func' matches current internal version (3.8 20210203)
+2021-11-03 21:49:34|   0.1|  0.1|INFORM|Loaded module 'HTTPFactory' from file 'C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\plugins/HTTPFactory.dll'
+2021-11-03 21:49:34|   0.1|  0.0|INFORM|FME API version of module 'HTTPFactory' matches current internal version (3.8 20210203)
+2021-11-03 21:49:34|   0.1|  0.0|INFORM|Loaded module 'JSONQueryFactory' from file 'C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\plugins/JSONQueryFactory.dll'
+2021-11-03 21:49:34|   0.1|  0.0|INFORM|FME API version of module 'JSONQueryFactory' matches current internal version (3.8 20210203)
+2021-11-03 21:49:34|   0.2|  0.1|INFORM|FME API version of module 'JSONQueryFactory' matches current internal version (3.8 20210203)
+2021-11-03 21:49:34|   0.2|  0.0|INFORM|Loaded module 'VertexCreatorFactory' from file 'C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\plugins/VertexCreatorFactory.dll'
+2021-11-03 21:49:34|   0.2|  0.0|INFORM|FME API version of module 'VertexCreatorFactory' matches current internal version (3.8 20210203)
+2021-11-03 21:49:34|   0.3|  0.1|INFORM|Emptying factory pipeline
+2021-11-03 21:49:34|   0.3|  0.0|STATS |Router and Unexpected Input Remover (RoutingFactory): Tested 0 input feature(s), wrote 0 output feature(s): 0 matched merge filters, 0 were routed to output, 0 could not be routed.
+2021-11-03 21:49:34|   0.3|  0.0|STATS |Unexpected Input Remover Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:34|   0.3|  0.0|STATS |JSONFeature_JSON_1 Splitter (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:34|   0.3|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_Creator -1 10 fo 0 CREATED  2  f13bce0bf432655921d6e8065b4286be81564a1c.ffsupdating'
+2021-11-03 21:49:34|   0.3|  0.0|STATS |Creator_XML_Creator (CreationFactory): Created 1 features
+2021-11-03 21:49:34|   0.3|  0.0|STATS |Creator_Cloner (TeeFactory): Cloned 1 input feature(s) into 1 output feature(s)
+2021-11-03 21:49:34|   0.3|  0.0|STATS |Creator_CREATED Feature Counter -1 20 (TeeFactory): Cloned 1 input feature(s) into 1 output feature(s)
+2021-11-03 21:49:34|   0.3|  0.0|STATS |Creator_CREATED Brancher -1 20 (BranchingFactory): Branched 1 input feature -- 1 feature routed to the target factory, and 0 features routed to the fallback factory.
+2021-11-03 21:49:34|   0.3|  0.0|STATS |_CREATOR_BRANCH_TARGET (TeeFactory): Cloned 1 input feature(s) into 1 output feature(s)
+2021-11-03 21:49:34|   0.5|  0.2|INFORM|HTTPCaller (HTTPFactory): [1]: Starting HTTP download from 'maps.googleapis.com'. Expected transfer size: 6856 bytes
+2021-11-03 21:49:34|   0.5|  0.0|INFORM|HTTPCaller (HTTPFactory): [1]: HTTP Download: received 6856 bytes
+2021-11-03 21:49:34|   0.5|  0.0|INFORM|HTTPCaller (HTTPFactory): [1]: HTTP transfer summary (maps.googleapis.com): status code: 200, download size: 6856 bytes, DNS lookup time: 64 ms, total transfer time: 238 ms
+2021-11-03 21:49:34|   0.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_HTTPCaller -1 18 fo 0 Output  0  b6659ec0a73570e83a1562a462b7deca68efebe0.ffsupdating'
+2021-11-03 21:49:34|   0.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_JSONFragmenter -1 13 fo 0 FRAGMENTS  0  2bb19f74727c305858895fed00bfea90b943c24e.ffsupdating'
+2021-11-03 21:49:34|   0.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_JSONFragmenter_2 -1 15 fo 0 FRAGMENTS  0  af754c16ed4cb7f89f9c7c301b6707d213e78924.ffsupdating'
+2021-11-03 21:49:34|   0.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_VertexCreator_2 -1 28 fo 0 OUTPUT  0  5a601469d2925684963bfefbf8a8842a4286e162.ffsupdating'
+2021-11-03 21:49:34|   0.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_CoordinateSystemSetter_2 -1 19 fo 0 OUTPUT  0  be358638d2e6d840c99c091188d1dfa8d0b673f9.ffsupdating'
+2021-11-03 21:49:34|   0.6|  0.1|STATS |Storing feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_AttributeManager -1 23 fo 0 OUTPUT  0  535c0cdd4460909186e180072f7c280770eaefde.ffsupdating'
+2021-11-03 21:49:35|   0.6|  0.0|STATS |HTTPCaller_Output Feature Counter -1 22 (TeeFactory): Cloned 1 input feature(s) into 1 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |HTTPCaller_<REJECTED> Feature Counter -1 2147680274 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |HTTPCaller_<Rejected> (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |JSONFragmenter_FRAGMENTS Feature Counter -1 16 (TeeFactory): Cloned 20 input feature(s) into 20 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |JSONFragmenter_<REJECTED> Feature Counter -1 2147680269 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |JSONFragmenter_<Rejected> (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |JSONFragmenter_2_FRAGMENTS Feature Counter -1 29 (TeeFactory): Cloned 20 input feature(s) into 20 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |JSONFragmenter_2_<REJECTED> Feature Counter -1 2147680271 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |JSONFragmenter_2_<Rejected> (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |VertexCreator_2_OUTPUT Feature Counter -1 30 (TeeFactory): Cloned 20 input feature(s) into 20 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |VertexCreator_2_<REJECTED> Feature Counter -1 2147680284 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |VertexCreator_2_<Rejected> (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |CoordinateSystemSetter_2 (TeeFactory): Cloned 20 input feature(s) into 20 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |CoordinateSystemSetter_2_OUTPUT Feature Counter -1 25 (TeeFactory): Cloned 20 input feature(s) into 20 output feature(s)
+2021-11-03 21:49:35|   0.6|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_Creator -1 10 fo 0 CREATED  2  f13bce0bf432655921d6e8065b4286be81564a1c.ffsupdating'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_Creator -1 10 fo 0 CREATED  2  f13bce0bf432655921d6e8065b4286be81564a1c.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_Creator -1 10 fo 0 CREATED  2  f13bce0bf432655921d6e8065b4286be81564a1c.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_HTTPCaller -1 18 fo 0 Output  0  b6659ec0a73570e83a1562a462b7deca68efebe0.ffsupdating'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_HTTPCaller -1 18 fo 0 Output  0  b6659ec0a73570e83a1562a462b7deca68efebe0.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_HTTPCaller -1 18 fo 0 Output  0  b6659ec0a73570e83a1562a462b7deca68efebe0.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|STATS |Stored 20 feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_JSONFragmenter -1 13 fo 0 FRAGMENTS  0  2bb19f74727c305858895fed00bfea90b943c24e.ffsupdating'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_JSONFragmenter -1 13 fo 0 FRAGMENTS  0  2bb19f74727c305858895fed00bfea90b943c24e.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_JSONFragmenter -1 13 fo 0 FRAGMENTS  0  2bb19f74727c305858895fed00bfea90b943c24e.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|STATS |Stored 20 feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_JSONFragmenter_2 -1 15 fo 0 FRAGMENTS  0  af754c16ed4cb7f89f9c7c301b6707d213e78924.ffsupdating'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_JSONFragmenter_2 -1 15 fo 0 FRAGMENTS  0  af754c16ed4cb7f89f9c7c301b6707d213e78924.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_JSONFragmenter_2 -1 15 fo 0 FRAGMENTS  0  af754c16ed4cb7f89f9c7c301b6707d213e78924.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|STATS |Stored 20 feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_CoordinateSystemSetter_2 -1 19 fo 0 OUTPUT  0  be358638d2e6d840c99c091188d1dfa8d0b673f9.ffsupdating'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_CoordinateSystemSetter_2 -1 19 fo 0 OUTPUT  0  be358638d2e6d840c99c091188d1dfa8d0b673f9.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_CoordinateSystemSetter_2 -1 19 fo 0 OUTPUT  0  be358638d2e6d840c99c091188d1dfa8d0b673f9.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|STATS |Stored 20 feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_VertexCreator_2 -1 28 fo 0 OUTPUT  0  5a601469d2925684963bfefbf8a8842a4286e162.ffsupdating'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_VertexCreator_2 -1 28 fo 0 OUTPUT  0  5a601469d2925684963bfefbf8a8842a4286e162.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_VertexCreator_2 -1 28 fo 0 OUTPUT  0  5a601469d2925684963bfefbf8a8842a4286e162.fsi'
+2021-11-03 21:49:35|   0.6|  0.0|STATS |Stored 20 feature(s) to FME feature store file `C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_AttributeManager -1 23 fo 0 OUTPUT  0  535c0cdd4460909186e180072f7c280770eaefde.ffsupdating'
+2021-11-03 21:49:35|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_AttributeManager -1 23 fo 0 OUTPUT  0  535c0cdd4460909186e180072f7c280770eaefde.fsi'
+2021-11-03 21:49:35|   0.7|  0.1|INFORM|Finished saving spatial index into file 'C:\Users\jwei\AppData\Local\Temp\ArcGISProTemp17292\wb-cache-BBTJson-kedYbQ\Main_AttributeManager -1 23 fo 0 OUTPUT  0  535c0cdd4460909186e180072f7c280770eaefde.fsi'
+2021-11-03 21:49:35|   0.7|  0.0|STATS |AttributeManager_OUTPUT Feature Counter -1 26 (TeeFactory): Cloned 20 input feature(s) into 20 output feature(s)
+2021-11-03 21:49:35|   0.7|  0.0|STATS |Destination Feature Type Routing Correlator (RoutingFactory): Tested 20 input feature(s), wrote 20 output feature(s): 0 matched merge filters, 20 were routed to output, 0 could not be routed.
+2021-11-03 21:49:35|   0.7|  0.0|STATS |Final Output Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|MULTI_WRITER: multi_writer_id `1': Started outputting features
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|Creating writer for format: Esri Shapefile
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `SHAPEFILE'
+2021-11-03 21:49:35|   0.7|  0.0|WARN  |Error prepending 'C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\plugins/' to path environment variable.  The addition may not exist, or on Windows the resulting path may be longer than 2047 characters
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|Loaded module 'SHAPEFILE' from file 'C:\Program Files\ArcGIS\Data Interoperability for ArcGIS Pro\plugins/shapefile_dbase.dll'
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|FME API version of module 'SHAPEFILE' matches current internal version (3.8 20210203)
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|FME API version of module 'SHAPEFILE' matches current internal version (3.8 20210203)
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|Writer `SHAPEFILE_2' of type `SHAPEFILE' using group definition keyword `SHAPEFILE_2_DEF'
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|FME API version of module 'SHAPEFILE' matches current internal version (3.8 20210203)
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|Shapefile Writer: Feature Type 'GoogleAPIbbt' set to geometry type 'shapefile_point'
+2021-11-03 21:49:35|   0.7|  0.0|WARN  |Shapefile writer: Internal error: unknown field type 'AUTO'. Please report this error to Safe Software
+2021-11-03 21:49:35|   0.7|  0.0|WARN  |Shapefile writer: Internal error: unknown field type 'varchar(254)'. Please report this error to Safe Software
+2021-11-03 21:49:35|   0.7|  0.0|WARN  |... Last line repeated 2 times ...
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|Shapefile Writer: Automatically detected 'point_2D' Shape type for feature type 'GoogleAPIbbt'
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|Shapefile writer: Using auto-detected encoding 'windows-1252' for writing feature type 'GoogleAPIbbt'. If this is undesired, set the Character Encoding explicitly parameter on the writer
+2021-11-03 21:49:35|   0.7|  0.0|INFORM|Shapefile Writer: Detected coordinate system 'LL84' on feature type 'GoogleAPIbbt'
+2021-11-03 21:49:35|   0.8|  0.1|INFORM|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|INFORM|Feature output statistics for `SHAPEFILE' writer using keyword `SHAPEFILE_2':
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|STATS |                               Features Written
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|STATS |GoogleAPIbbt                                                                20
+2021-11-03 21:49:35|   0.8|  0.0|STATS |==============================================================================
+2021-11-03 21:49:35|   0.8|  0.0|STATS |Total Features Written                                                      20
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|INFORM|MULTI_WRITER: multi_writer_id `1': done writing 20 feature(s) 
+2021-11-03 21:49:35|   0.8|  0.0|INFORM|^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|STATS |                            Features Read Summary
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|STATS |==============================================================================
+2021-11-03 21:49:35|   0.8|  0.0|STATS |Total Features Read                                                          0
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|STATS |                           Features Written Summary
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|STATS |GoogleAPIbbt                                                                20
+2021-11-03 21:49:35|   0.8|  0.0|STATS |==============================================================================
+2021-11-03 21:49:35|   0.8|  0.0|STATS |Total Features Written                                                      20
+2021-11-03 21:49:35|   0.8|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-11-03 21:49:35|   0.8|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-11-03 21:49:35|   0.8|  0.0|WARN  |-~                                                                             ~-
+2021-11-03 21:49:35|   0.8|  0.0|WARN  |-~    Feature caches have been recorded at every stage of the translation.     ~-
+2021-11-03 21:49:35|   0.8|  0.0|WARN  |-~                      To inspect the recorded features,                      ~-
+2021-11-03 21:49:35|   0.8|  0.0|WARN  |-~              click the feature cache icons next to the ports.               ~-
+2021-11-03 21:49:35|   0.8|  0.0|WARN  |-~                                                                             ~-
+2021-11-03 21:49:35|   0.8|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-11-03 21:49:35|   0.8|  0.0|INFORM|Translation was SUCCESSFUL with 12 warning(s) (20 feature(s) output)
+2021-11-03 21:49:35|   0.8|  0.0|INFORM|FME Session Duration: 1 second. (CPU: 0.5s user, 0.3s system)
+2021-11-03 21:49:35|   0.8|  0.0|INFORM|END - ProcessID: 21848, peak process memory usage: 125632 kB, current process memory usage: 125632 kB
