@@ -6,6 +6,7 @@ google-api-json-writer v2
 '''
 
 import json
+import csv
 from urllib.request import urlopen
 
 def google_geocode():
@@ -41,7 +42,11 @@ def csv_writer():
     result = []
 
     # Writes the data into json
-    with open('bbt.csv','w') as f:
+    with open('bbt.csv', 'w', newline='') as f:
+        fieldnames = ['places_id', 'name', 'lat', 'lng', 'address', 'rating', 'price' ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+
 
         for num in range(len(data['results'])):
             place_id = data['results'][num]['place_id']
@@ -49,14 +54,24 @@ def csv_writer():
             lat = data['results'][num]['geometry']['location']['lat']
             lng = data['results'][num]['geometry']['location']['lng']
             address = data['results'][num]['vicinity']
+            rating = data['results'][num]['rating']
+            # For some reason i cannot access the price level?
+            # Not all price level has 
+            # if data['results'][num]['price_level']:
+            #     print('yes')
+            # else:
+            #     print('null')
+                
+            writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'lng': lng, 'address': address, 'rating': rating})
+
 
             # Converting the dictionaries back into a dictionary
-            result.append({'name': name, 'lat': lat, 'lng': lng, 'place_id': place_id, 'address': address})
-            
-        json.dump(result, f)
+            # result.append({'name': name, 'lat': lat, 'lng': lng, 'place_id': place_id, 'address': address})
+        
+        # Conver this into csv
+        # json.dump(result, f)
 
-
-
+# Function driver
 google_geocode()
 places_api_json_loader()
 csv_writer()
