@@ -8,14 +8,28 @@ google-api-json-writer v2
 import json
 from urllib.request import urlopen
 
+def google_geocode():
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=Markham,Ontario&key=AIzaSyAghqYiaSS2WiwxUjaFaJsoB16FejcGdxs"
+
+    with urlopen(url) as response:
+        source = response.read()
+
+    data = json.loads(source)
+    geocode_lat = (data['results'][0]['geometry']['location']['lat'])
+    geocode_long = (data['results'][0]['geometry']['location']['lng'])
+    
+    return geocode_lat, geocode_long
+
+places_lat, places_long = google_geocode()
+
 
 def google_api_json_loader():
     
     # Ideal situation would be to use a place name, and receive the coordinates instead
-    api_lat = input("Enter Latitude: ")
-    api_long = input("Enter Longitude: ")
     
-    with urlopen("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=43.91407265468856%2C-79.44731313715351&radius=10000&keyword=bubbletea&key=AIzaSyBnui5g3BeTm3LcbBLBvbLrWFcwMEv6J8k") as response:
+    url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={places_lat}%2C{places_long}&radius=10000&keyword=bubbletea&key=AIzaSyBnui5g3BeTm3LcbBLBvbLrWFcwMEv6J8k"
+
+    with urlopen(url) as response:
         source = response.read()
 
     data = json.loads(source)
@@ -51,5 +65,7 @@ def json_writer():
 # with open('bbt.json','w') as f:
 #     json.dump(data, f)
 
-google_api_json_loader()
-json_writer()
+
+google_geocode()
+# google_api_json_loader()
+# json_writer()
