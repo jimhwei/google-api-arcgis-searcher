@@ -7,10 +7,13 @@ google-api-json-writer v2
 
 import json
 import csv
+import urllib.parse
 from urllib.request import urlopen
 
 def google_geocode():
-    url = "https://maps.googleapis.com/maps/api/geocode/json?address=Markham,Ontario&key=AIzaSyAghqYiaSS2WiwxUjaFaJsoB16FejcGdxs"
+    unparsed_place = input("Where would you like to have bubble tea? \n")
+    place = urllib.parse.quote_plus(unparsed_place)
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?address={place}&key=AIzaSyAghqYiaSS2WiwxUjaFaJsoB16FejcGdxs"
 
     with urlopen(url) as response:
         source = response.read()
@@ -19,6 +22,7 @@ def google_geocode():
     geocode_lat = (data['results'][0]['geometry']['location']['lat'])
     geocode_long = (data['results'][0]['geometry']['location']['lng'])
     
+    # print(place, url, geocode_lat, geocode_long)
     return geocode_lat, geocode_long
 
 places_lat, places_long = google_geocode()
@@ -33,6 +37,7 @@ def places_api_json_loader():
         source = response.read()
 
     data = json.loads(source)
+    # print("places done")
     return data
 
 data = places_api_json_loader()
@@ -40,8 +45,8 @@ data = places_api_json_loader()
 def csv_writer():
     
     # Writes the data into json
-    with open('bbt.csv', 'w', newline='') as f:
-        fieldnames = ['places_id', 'name', 'lat', 'lng', 'address', 'rating', 'price' ]
+    with open('./bbt.csv', 'w', newline='') as f:
+        fieldnames = ['places_id', 'name', 'lat', 'long', 'address', 'rating', 'price' ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
 
@@ -59,9 +64,9 @@ def csv_writer():
             # else:
             #     print('null')
                 
-            writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'lng': long, 'address': address, 'rating': rating})
-
+            writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'long': long, 'address': address, 'rating': rating})
+            print('places_id:', place_id, 'name:', name, 'lat:', lat, 'long: ', long, 'address:', address, 'rating:', rating)
+        
 # Function driver
-google_geocode()
 places_api_json_loader()
 csv_writer()
