@@ -38,9 +38,7 @@ def places_api_json_loader():
 data = places_api_json_loader()
 
 def csv_writer():
-
-    result = []
-
+    
     # Writes the data into json
     with open('bbt.csv', 'w', newline='') as f:
         fieldnames = ['places_id', 'name', 'lat', 'lng', 'address', 'rating', 'price' ]
