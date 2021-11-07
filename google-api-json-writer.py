@@ -8,16 +8,20 @@ google-api-json-writer v2
 import json
 from urllib.request import urlopen
 
-api_lat = input("Enter Latitude: ")
-api_long = input("Enter Longitude: ")
 
 def google_api_json_loader():
+    
+    # Ideal situation would be to use a place name, and receive the coordinates instead
+    api_lat = input("Enter Latitude: ")
+    api_long = input("Enter Longitude: ")
     
     with urlopen("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=43.91407265468856%2C-79.44731313715351&radius=10000&keyword=bubbletea&key=AIzaSyBnui5g3BeTm3LcbBLBvbLrWFcwMEv6J8k") as response:
         source = response.read()
 
     data = json.loads(source)
+    return data
 
+data = google_api_json_loader()
 
 def json_writer():
 
@@ -46,3 +50,6 @@ def json_writer():
 # Write the data into csv
 # with open('bbt.json','w') as f:
 #     json.dump(data, f)
+
+google_api_json_loader()
+json_writer()
