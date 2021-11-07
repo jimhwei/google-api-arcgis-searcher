@@ -23,10 +23,9 @@ def google_geocode():
 places_lat, places_long = google_geocode()
 
 
-def google_api_json_loader():
+def places_api_json_loader():
     
-    # Ideal situation would be to use a place name, and receive the coordinates instead
-    
+    # Default is 10000m search radius and searches bubble tea
     url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={places_lat}%2C{places_long}&radius=10000&keyword=bubbletea&key=AIzaSyBnui5g3BeTm3LcbBLBvbLrWFcwMEv6J8k"
 
     with urlopen(url) as response:
@@ -35,20 +34,15 @@ def google_api_json_loader():
     data = json.loads(source)
     return data
 
-data = google_api_json_loader()
+data = places_api_json_loader()
 
 def json_writer():
 
     result = []
 
-    # Working with JSON
-    # https://www.youtube.com/watch?v=9N6a-VLBa2I
-
     # Writes the data into json
     with open('bbt.json','w') as f:
 
-        # Uses range and length of the list to create 
-        # https://careerkarma.com/blog/python-typeerror-list-indices-must-be-integers-or-slices-not-str/
         for num in range(len(data['results'])):
             place_id = data['results'][num]['place_id']
             name = data['results'][num]['name']
@@ -67,5 +61,5 @@ def json_writer():
 
 
 google_geocode()
-# google_api_json_loader()
-# json_writer()
+places_api_json_loader()
+json_writer()
