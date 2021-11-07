@@ -47,7 +47,6 @@ def csv_writer():
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
 
-
         for num in range(len(data['results'])):
             place_id = data['results'][num]['place_id']
             name = data['results'][num]['name']
@@ -63,13 +62,6 @@ def csv_writer():
             #     print('null')
                 
             writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'lng': lng, 'address': address, 'rating': rating})
-
-
-            # Converting the dictionaries back into a dictionary
-            # result.append({'name': name, 'lat': lat, 'lng': lng, 'place_id': place_id, 'address': address})
-        
-        # Conver this into csv
-        # json.dump(result, f)
 
 # Function driver
 google_geocode()
