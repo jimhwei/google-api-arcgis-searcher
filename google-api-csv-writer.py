@@ -51,7 +51,7 @@ def csv_writer():
             place_id = data['results'][num]['place_id']
             name = data['results'][num]['name']
             lat = data['results'][num]['geometry']['location']['lat']
-            lng = data['results'][num]['geometry']['location']['lng']
+            long = data['results'][num]['geometry']['location']['lng']
             address = data['results'][num]['vicinity']
             rating = data['results'][num]['rating']
             # For some reason i cannot access the price level?
@@ -61,7 +61,7 @@ def csv_writer():
             # else:
             #     print('null')
                 
-            writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'lng': lng, 'address': address, 'rating': rating})
+            writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'lng': long, 'address': address, 'rating': rating})
 
 # Function driver
 google_geocode()
