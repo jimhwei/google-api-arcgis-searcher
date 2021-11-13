@@ -45,7 +45,7 @@ data = places_api_json_loader()
 def csv_writer():
     
     # Writes the data into json
-    with open('./bbt.csv', 'w', newline='') as f:
+    with open(r'.\bbt.csv', 'w', newline='') as f:
         fieldnames = ['places_id', 'name', 'lat', 'long', 'address', 'rating', 'price' ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
