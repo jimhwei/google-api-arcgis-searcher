@@ -2,14 +2,17 @@
 Scripted by Honglin (Jim) Wei
 All rights reserved
 Date: 2021-11-16
-google-api-json-writer v2
+google-api-json-writer v4
 '''
 
 import json
 import csv
 import urllib.parse
 from urllib.request import urlopen
+import arcpy
 
+
+# Single Places only
 def google_geocode():
     unparsed_place = input("Where would you like to have bubble tea? \n")
     place = urllib.parse.quote_plus(unparsed_place)
@@ -25,7 +28,7 @@ def google_geocode():
     # print(place, url, geocode_lat, geocode_long)
     return geocode_lat, geocode_long
 
-places_lat, places_long = google_geocode()
+# places_lat, places_long = google_geocode()
 
 
 def places_api_json_loader():
@@ -40,12 +43,10 @@ def places_api_json_loader():
     # print("places done")
     return data
 
-data = places_api_json_loader()
-
 def csv_writer():
     
     # Writes the data into json
-    with open(r'.\bbt.csv', 'w', newline='') as f:
+    with open(r'.\bbt.csv', 'a+', newline='') as f:
         fieldnames = ['places_id', 'name', 'lat', 'long', 'address', 'rating', 'price' ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -63,10 +64,22 @@ def csv_writer():
             #     print('yes')
             # else:
             #     print('null')
-                
+            
+            # This here is a problem, it should only write the headers once not multiple times
             writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'long': long, 'address': address, 'rating': rating})
             print('places_id:', place_id, 'name:', name, 'lat:', lat, 'long: ', long, 'address:', address, 'rating:', rating)
         
 # Function driver
-places_api_json_loader()
-csv_writer()
+
+# Uses the polygon feature class at the following location
+fc = r'C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\MarkhamRHFSA_WGS84'
+
+# Should be a way to get the geometry using the centroid, but i don't remember how to right now
+cursor = arcpy.da.SearchCursor(fc, ['x', 'y'])
+
+# Loops through each FSA Polygon and assigns XY
+# Calls and appends the function
+for row in cursor:
+    places_lat, places_long = row[1], row[0]
+    data = places_api_json_loader()
+    csv_writer()
