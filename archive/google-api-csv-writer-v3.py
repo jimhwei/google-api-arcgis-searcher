@@ -42,12 +42,13 @@ def places_api_json_loader():
     # print("places done")
     return data
 
+places_lat, places_long = google_geocode()
 data = places_api_json_loader()
 
 def csv_writer():
     
     # Writes the data into json
-    with open(r'.\bbt.csv', 'a+', newline='') as f:
+    with open(r'.\bbt.csv', 'a+', newline='', encoding="utf-8") as f:
         fieldnames = ['places_id', 'name', 'lat', 'long', 'address', 'rating', 'price' ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -70,6 +71,5 @@ def csv_writer():
             print('places_id:', place_id, 'name:', name, 'lat:', lat, 'long: ', long, 'address:', address, 'rating:', rating)
         
 # Driver Function
-places_lat, places_long = google_geocode()
 places_api_json_loader()
 csv_writer()

@@ -2,15 +2,16 @@
 Scripted by Honglin (Jim) Wei
 All rights reserved
 Date: 2021-11-16
-google-api-json-writer v4
+google-api-json-writer v4.1
 '''
 
+import os
 import json
 import csv
 import urllib.parse
 from urllib.request import urlopen
 import arcpy
-
+import pandas as pd
 
 # Single Places only
 def google_geocode():
@@ -25,10 +26,7 @@ def google_geocode():
     geocode_lat = (data['results'][0]['geometry']['location']['lat'])
     geocode_long = (data['results'][0]['geometry']['location']['lng'])
     
-    # print(place, url, geocode_lat, geocode_long)
     return geocode_lat, geocode_long
-
-# places_lat, places_long = google_geocode()
 
 
 def places_api_json_loader():
@@ -40,16 +38,22 @@ def places_api_json_loader():
         source = response.read()
 
     data = json.loads(source)
-    # print("places done")
     return data
 
 def csv_writer():
     
-    # Writes the data into json
-    with open(r'.\bbt.csv', 'a+', newline='') as f:
+    # Writes the data into csv
+    with open(r'.\bbt.csv', 'a+', newline='', encoding="utf-8") as f:
+        file_path = r'.\bbt.csv' # Anyway to avoid writing the file path twice?
         fieldnames = ['places_id', 'name', 'lat', 'long', 'address', 'rating', 'price' ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
+
+        # check if size of file is 0 and inserts a header if necessary 
+        if os.stat(file_path).st_size == 0:
+            print('File is empty')
+            writer.writeheader()
+        else:
+            print('File is not empty')
 
         for num in range(len(data['results'])):
             place_id = data['results'][num]['place_id']
@@ -72,6 +76,7 @@ def csv_writer():
 # Function driver
 
 # Uses the polygon feature class at the following location
+# Is there a way traverse directories instead of hard coding?
 fc = r'C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\MarkhamRHFSA_WGS84'
 
 # Should be a way to get the geometry using the centroid, but i don't remember how to right now
@@ -83,3 +88,22 @@ for row in cursor:
     places_lat, places_long = row[1], row[0]
     data = places_api_json_loader()
     csv_writer()
+
+
+# Cleans the duplicates in the csv using pandas
+def remove_duplicates():
+    file_name = "bbt.csv"
+    file_name_output = "bbt.csv"
+
+    df = pd.read_csv(file_name, engine='python', encoding="utf-8")
+
+    # Notes:
+    # - the `subset=None` means that every column is used 
+    #    to determine if two rows are different; to change that specify
+    #    the columns as an array
+    # - the `inplace=True` means that the data structure is changed and
+    #   the duplicate rows are gone  
+    df.drop_duplicates(subset=None, inplace=True)
+
+    # Write the results to a different file
+    df.to_csv(file_name_output, index=False, encoding="utf-8")
