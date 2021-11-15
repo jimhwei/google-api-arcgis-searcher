@@ -52,8 +52,6 @@ def csv_writer():
         if os.stat(file_path).st_size == 0:
             print('File is empty, inserting headers')
             writer.writeheader()
-        else:
-            print('File is not empty')
 
         for num in range(len(data['results'])):
             place_id = data['results'][num]['place_id']
@@ -61,38 +59,18 @@ def csv_writer():
             lat = data['results'][num]['geometry']['location']['lat']
             long = data['results'][num]['geometry']['location']['lng']
             address = data['results'][num]['vicinity']
-            rating = data['results'][num]['rating']
-            # For some reason i cannot access the price level?
-            # Not all price level has 
-            # if data['results'][num]['price_level']:
-            #     print('yes')
-            # else:
-            #     print('null')
+            # Have to make an exception for price and ratings, since not all of them have prices
+            # The following seems to suppres the error from occuring
+            rating = ''
+            price = ''
+            try:
+                rating = data['results'][num]['rating']
+                price = data['results'][num]['price_level']
+            except KeyError:
+                pass
             
-            writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'long': long, 'address': address, 'rating': rating})
-            # print('places_id:', place_id, 'name:', name, 'lat:', lat, 'long: ', long, 'address:', address, 'rating:', rating)
+            writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'long': long, 'address': address, 'rating': rating, 'price': price})
         
-# Function driver
-
-# Uses the polygon feature class at the following location
-# Is there a way traverse directories instead of hard coding?
-fc = r'C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\GTAFSA_WGS84'
-
-# Should be a way to get the geometry using the centroid, but using the shapexy gives non decimal degrees coordinates
-cursor = arcpy.da.SearchCursor(fc, ['INSIDE_X', 'INSIDE_Y'])
-
-# Loops through each FSA Polygon and assigns XY
-# Calls and appends the function
-
-call_count = 0
-
-for row in cursor:
-    places_lat, places_long = row[1], row[0]
-    data = places_api_json_loader()
-    csv_writer()
-    call_count += 1
-    print(f"The script ran {call_count} times")
-
 # Cleans the duplicates in the csv using pandas
 # However, the counts are off right now
 def remove_duplicates():
@@ -111,3 +89,28 @@ def remove_duplicates():
 
     # Write the results to a different file
     df.to_csv(file_name_output, index=False, encoding="utf-8")
+
+
+#########################################################################
+
+# Function driver
+
+# Uses the polygon feature class at the following location
+# Is there a way traverse directories instead of hard coding?
+fc = r'C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\GTAFSA_WGS84'
+
+# Should be a way to get the geometry using the centroid, but using the shapexy gives non decimal degrees coordinates
+cursor = arcpy.da.SearchCursor(fc, ['INSIDE_X', 'INSIDE_Y'])
+
+# Loops through each FSA Polygon and assigns XY
+# Calls and appends the function
+call_count = 0
+
+for row in cursor:
+    places_lat, places_long = row[1], row[0]
+    data = places_api_json_loader()
+    csv_writer()
+    call_count += 1
+    print(f"The script ran {call_count} times")
+
+print("The script is completed.")
