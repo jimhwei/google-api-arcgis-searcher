@@ -50,7 +50,7 @@ def csv_writer():
 
         # check if size of file is 0 and inserts a header if necessary 
         if os.stat(file_path).st_size == 0:
-            print('File is empty')
+            print('File is empty, inserting headers')
             writer.writeheader()
         else:
             print('File is not empty')
@@ -69,28 +69,32 @@ def csv_writer():
             # else:
             #     print('null')
             
-            # This here is a problem, it should only write the headers once not multiple times
             writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'long': long, 'address': address, 'rating': rating})
-            print('places_id:', place_id, 'name:', name, 'lat:', lat, 'long: ', long, 'address:', address, 'rating:', rating)
+            # print('places_id:', place_id, 'name:', name, 'lat:', lat, 'long: ', long, 'address:', address, 'rating:', rating)
         
 # Function driver
 
 # Uses the polygon feature class at the following location
 # Is there a way traverse directories instead of hard coding?
-fc = r'C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\MarkhamRHFSA_WGS84'
+fc = r'C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\GTAFSA_WGS84'
 
-# Should be a way to get the geometry using the centroid, but i don't remember how to right now
-cursor = arcpy.da.SearchCursor(fc, ['x', 'y'])
+# Should be a way to get the geometry using the centroid, but using the shapexy gives non decimal degrees coordinates
+cursor = arcpy.da.SearchCursor(fc, ['INSIDE_X', 'INSIDE_Y'])
 
 # Loops through each FSA Polygon and assigns XY
 # Calls and appends the function
+
+call_count = 0
+
 for row in cursor:
     places_lat, places_long = row[1], row[0]
     data = places_api_json_loader()
     csv_writer()
-
+    call_count += 1
+    print(f"The script ran {call_count} times")
 
 # Cleans the duplicates in the csv using pandas
+# However, the counts are off right now
 def remove_duplicates():
     file_name = "bbt.csv"
     file_name_output = "bbt.csv"
