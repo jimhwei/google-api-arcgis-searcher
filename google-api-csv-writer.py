@@ -36,7 +36,7 @@ def google_geocode():
 def places_api_json_loader():
     
     # Default is 10000m search radius and searches bubble tea
-    url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={places_lat}%2C{places_long}&radius=10000&keyword=bubbletea&key={nearby_key}"
+    url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={places_lat}%2C{places_long}&radius=10000&keyword=bubble%20tea&key={nearby_key}"
 
     with urlopen(url) as response:
         source = response.read()
@@ -77,6 +77,7 @@ def csv_writer(data):
 
 def next_page(data):
 
+    print(data)
     if data['next_page_token']:
         next_page_token = data['next_page_token']
     next_page_url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken={next_page_token}&key=AIzaSyBnui5g3BeTm3LcbBLBvbLrWFcwMEv6J8k"
@@ -115,6 +116,19 @@ def remove_duplicates():
 
 #########################################################################
 
+# # Single point testing. 
+# places_lat, places_long = 43.6684309,-79.3882317
+
+# data = places_api_json_loader()
+# csv_writer(data)
+
+# new_data = next_page(data)
+# csv_writer(new_data)
+
+# new_data_2 = next_page(new_data)
+# csv_writer(new_data_2)
+# call_count += 1
+
 # Function driver
 
 # Uses the polygon feature class at the following location
@@ -134,14 +148,18 @@ for row in cursor:
     csv_writer(data)
     call_count += 1
 
+    try: 
     # We are assuming that the Google Maps returns a maximum of 60 responses over 3 pages
-    new_data = next_page(data)
-    csv_writer(new_data)
-    call_count += 1
+        new_data = next_page(data)
+        csv_writer(new_data)
+        call_count += 1
 
-    new_data_2 = next_page(new_data)
-    csv_writer(new_data_2)
-    call_count += 1
+        new_data_2 = next_page(new_data)
+        csv_writer(new_data_2)
+        call_count += 1
+
+    except KeyError as err:
+        print(err)
 
     print(f"The script ran {call_count} times")
 
