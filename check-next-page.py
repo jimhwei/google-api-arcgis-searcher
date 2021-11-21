@@ -1,9 +1,3 @@
-'''
-Scripted by Honglin (Jim) Wei
-All rights reserved
-Date: 2021-11-16
-google-api-json-writer v4.1
-'''
 import time
 import json
 from urllib.request import urlopen
@@ -44,7 +38,7 @@ def next_page(data):
     print("Next page ran")
     return next_page_data
 
-# We are assuming that the Google Maps use 
+# We are assuming that the Google Maps returns a maximum of 60 responses over 3 pages
 new_data = next_page(data)
 new_data_2 = next_page(new_data)
 
