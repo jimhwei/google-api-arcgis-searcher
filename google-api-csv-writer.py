@@ -1,10 +1,3 @@
-'''
-Scripted by Honglin (Jim) Wei
-All rights reserved
-Date: 2021-11-16
-google-api-json-writer v4.1
-'''
-
 import os
 import time
 import json
@@ -17,12 +10,12 @@ import pandas as pd
 
 arcpy.env.overwriteOutput = True
 
+# Replace the keys for your own!
 geocode_key = 'AIzaSyAghqYiaSS2WiwxUjaFaJsoB16FejcGdxs'
 nearby_key = 'AIzaSyBnui5g3BeTm3LcbBLBvbLrWFcwMEv6J8k'
 
 query = input("What would you like to search?\nFor Example: Bubble Tea \n")
 encoded_query = quote(query)
-# print(encoded_query)
 
 # Single Places only
 def google_geocode():
@@ -55,7 +48,7 @@ def csv_writer(data):
     
     # Writes the data into csv
     with open(r'.\bbt.csv', 'a+', newline='', encoding="utf-8") as f:
-        file_path = r'.\bbt.csv' # Anyway to avoid writing the file path twice?
+        file_path = r'.\bbt.csv' 
         fieldnames = ['places_id', 'name', 'lat', 'long', 'address', 'rating', 'price' ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
 
@@ -64,46 +57,44 @@ def csv_writer(data):
             print('File is empty, inserting headers')
             writer.writeheader()
 
+        # The heart of this project, loops through the individual api responses
         for num in range(len(data['results'])):
             place_id = data['results'][num]['place_id']
             name = data['results'][num]['name']
             lat = data['results'][num]['geometry']['location']['lat']
             long = data['results'][num]['geometry']['location']['lng']
             address = data['results'][num]['vicinity']
-            # Have to make an exception for price and ratings, since not all of them have prices
-            # The following seems to suppres the error from occuring
-            rating = ''
+            rating = '' # Have to make an exception for price and ratings, since not all of them have prices
             price = ''
+            
             try:
                 rating = data['results'][num]['rating']
                 price = data['results'][num]['price_level']
             except KeyError:
                 pass
             
+            # Writes the rows into the csv
             writer.writerow({'places_id': place_id, 'name': name, 'lat': lat, 'long': long, 'address': address, 'rating': rating, 'price': price})
 
 def next_page(data):
 
-    # print(data)
     if data['next_page_token']:
         next_page_token = data['next_page_token']
     next_page_url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken={next_page_token}&key=AIzaSyBnui5g3BeTm3LcbBLBvbLrWFcwMEv6J8k"
     
-    # Turns out the new token takes time to issue.. So we need to sleep
+    # Turns out the new token takes time to issue.. So we need to wait in between our calls
     # https://stackoverflow.com/questions/18724736/google-place-invalid-request-while-sending-request-to-get-next-page-results
     time.sleep(1.5)
 
     with urlopen(next_page_url) as response:
         source = response.read()
-        # print(source)
 
     next_page_data = json.loads(source)
-    # print("Next page ran")
     return next_page_data
 
 # Cleans the duplicates in the csv using pandas
-# However, the counts are off right now
 def remove_duplicates():
+
     file_name = "bbt.csv"
     file_name_output = "bbt.csv"
 
@@ -122,19 +113,6 @@ def remove_duplicates():
 
 
 #########################################################################
-
-'''# # Single point testing. 
-# places_lat, places_long = 43.6684309,-79.3882317
-
-# data = places_api_json_loader()
-# csv_writer(data)
-
-# new_data = next_page(data)
-# csv_writer(new_data)
-
-# new_data_2 = next_page(new_data)
-# csv_writer(new_data_2)
-'''
 
 # Function driver
 
@@ -174,10 +152,13 @@ for row in cursor:
 
 print(f"Google API was called {call_count} times")
 
+# This uses ArcPy, which comes with an ArcGIS Pro installation
+"""
 # Converts CSV into an table called google_points.
 arcpy.management.XYTableToPoint(r"C:\Users\jimwe\github\google-api-arcgis-integration\bbt.csv", r"C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\google_points", "long", "lat", None, 'GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision')
 
 # Deletes duplicate entries using places_id
 arcpy.management.DeleteIdentical(r"C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\google_points", "places_id", None, 0)
+"""
 
 print("The script is completed.")
