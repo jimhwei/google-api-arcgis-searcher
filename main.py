@@ -1,3 +1,8 @@
+'''
+google-api-json-writer
+Scripted by Honglin (Jim) Wei
+Date: 2021-11-24
+'''
 import os
 import time
 import json
