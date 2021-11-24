@@ -15,7 +15,7 @@ import pandas as pd
 
 arcpy.env.overwriteOutput = True
 
-# Replace the keys for your own!
+# Sample Google API Keys. Replace the keys for your own!
 geocode_key = 'AIzaSyAghqYiaSS2WiwxUjaFaJsoB16FejcGdxs'
 nearby_key = 'AIzaSyBnui5g3BeTm3LcbBLBvbLrWFcwMEv6J8k'
 
@@ -123,7 +123,7 @@ def remove_duplicates():
 
 # Uses the polygon feature class at the following location
 # Is there a way traverse directories instead of hard coding?
-fc = r'C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\GTAFSA_WGS84'
+fc = r'.\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\GTAFSA_WGS84'
 
 # Should be a way to get the geometry using the centroid, but using the shapexy gives non decimal degrees coordinates
 cursor = arcpy.da.SearchCursor(fc, ['INSIDE_X', 'INSIDE_Y'])
@@ -158,12 +158,11 @@ for row in cursor:
 print(f"Google API was called {call_count} times")
 
 # This uses ArcPy, which comes with an ArcGIS Pro installation
-"""
-# Converts CSV into an table called google_points.
-arcpy.management.XYTableToPoint(r"C:\Users\jimwe\github\google-api-arcgis-integration\bbt.csv", r"C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\google_points", "long", "lat", None, 'GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision')
 
-# Deletes duplicate entries using places_id
-arcpy.management.DeleteIdentical(r"C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\google_points", "places_id", None, 0)
-"""
+# # Converts CSV into an table called google_points.
+# arcpy.management.XYTableToPoint(r"C:\Users\jimwe\github\google-api-arcgis-integration\bbt.csv", r"C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\google_points", "long", "lat", None, 'GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137.0,298.257223563]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision')
+
+# # Deletes duplicate entries using places_id
+# arcpy.management.DeleteIdentical(r"C:\Users\jimwe\github\google-api-arcgis-integration\pro\YRBusinessDir2019\YRBusinessDir2019.gdb\google_points", "places_id", None, 0)
 
 print("The script is completed.")
